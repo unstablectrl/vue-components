@@ -9,18 +9,18 @@
 </template>
 
 <script>
-import Terminal from "./components/Terminal";
-import AspectRatioBox from "./components/AspectRatioBox";
-import AnimationInspect3d from "./components/AnimationInspect3d";
+import Terminal from './components/Terminal'
+import AspectRatioBox from './components/AspectRatioBox'
+import AnimationInspect3d from './components/AnimationInspect3d'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     AspectRatioBox,
     Terminal,
-    AnimationInspect3d
-  }
-};
+    AnimationInspect3d,
+  },
+}
 </script>
 
 <style>
@@ -33,7 +33,7 @@ export default {
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: antiquewhite;

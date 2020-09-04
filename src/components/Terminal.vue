@@ -20,17 +20,13 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style scoped>
 #terminal {
   padding: 5px;
-  background: linear-gradient(
-    rgb(45, 43, 85) 3%,
-    rgb(135, 46, 171) 65%,
-    rgb(145, 0, 255) 97%
-  );
+  background: linear-gradient(rgb(45, 43, 85) 3%, rgb(135, 46, 171) 65%, rgb(145, 0, 255) 97%);
   border: 1px solid rgb(80, 80, 80);
   border-radius: 5px;
 }

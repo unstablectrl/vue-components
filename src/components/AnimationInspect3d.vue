@@ -17,72 +17,69 @@ export default {
   data: () => ({
     delayDefault: 500,
     transitionDelay: 500,
-    transitionType: "ease-out",
+    transitionType: 'ease-out',
     off: true,
     rotationDefault: { x: 0, y: -0 },
     rotation_: { x: -0, y: 0 },
-    rotationMultiplier: -10
+    rotationMultiplier: -10,
   }),
   methods: {
     onMouseMove(e) {
       if (this.off) {
         setTimeout(() => {
           if (!this.off) {
-            this.transitionDelay = 50;
-            this.transitionType = "ease";
+            this.transitionDelay = 50
+            this.transitionType = 'ease'
           }
-        }, this.delayDefault);
+        }, this.delayDefault)
       }
 
-      const pos = { x: e.clientX, y: e.clientY };
-      const newRotation = this.calculateRotation(pos, this.boundaries);
-      this.rotation = newRotation;
+      const pos = { x: e.clientX, y: e.clientY }
+      const newRotation = this.calculateRotation(pos, this.boundaries)
+      this.rotation = newRotation
 
-      this.off = false;
+      this.off = false
     },
     calculateRotation(pos, boundaries) {
-      const { width, height, left, top } = boundaries;
-      const relX = pos.x - left;
-      const relY = pos.y - top;
-      const rotX = (relY / height) * -2 + 1;
-      const rotY = (relX / width) * 2 - 1;
-      return { x: rotX, y: rotY };
+      const { width, height, left, top } = boundaries
+      const relX = pos.x - left
+      const relY = pos.y - top
+      const rotX = (relY / height) * -2 + 1
+      const rotY = (relX / width) * 2 - 1
+      return { x: rotX, y: rotY }
     },
     onMouseLeave(e) {
-      this.off = true;
-      this.transitionDelay = this.delayDefault;
-      this.transitionType = "ease-out";
-      setTimeout(
-        () => (this.rotation = this.rotationDefault),
-        this.delayDefault / 4
-      );
-    }
+      this.off = true
+      this.transitionDelay = this.delayDefault
+      this.transitionType = 'ease-out'
+      setTimeout(() => (this.rotation = this.rotationDefault), this.delayDefault / 4)
+    },
   },
   computed: {
     boundaries() {
-      return this.$refs["animationInspect3d"].getBoundingClientRect();
+      return this.$refs['animationInspect3d'].getBoundingClientRect()
     },
     rotation: {
       get: function() {
-        return this.rotation_;
+        return this.rotation_
       },
       set: function(rot) {
         Object.assign(this.rotation_, {
           x: rot.x * this.rotationMultiplier,
-          y: rot.y * this.rotationMultiplier
-        });
-      }
+          y: rot.y * this.rotationMultiplier,
+        })
+      },
     },
     cssVars() {
       return {
-        "--rotate-x": this.rotation.x,
-        "--rotate-y": this.rotation.y,
-        "--transition-delay": this.transitionDelay,
-        "--transition-type": this.transitionType
-      };
-    }
-  }
-};
+        '--rotate-x': this.rotation.x,
+        '--rotate-y': this.rotation.y,
+        '--transition-delay': this.transitionDelay,
+        '--transition-type': this.transitionType,
+      }
+    },
+  },
+}
 </script>
 
 <style scoped>

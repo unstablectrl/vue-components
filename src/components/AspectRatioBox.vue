@@ -11,22 +11,22 @@ export default {
   props: {
     aspectRatio: {
       type: Number,
-      default: 16 / 9
+      default: 16 / 9,
     },
     // Note: center doesn't work if parent component has no height
     center: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     cssVars() {
       return {
-        "--aspect-ratio": this.aspectRatio
-      };
-    }
-  }
-};
+        '--aspect-ratio': this.aspectRatio,
+      }
+    },
+  },
+}
 </script>
 
 <style scoped>
