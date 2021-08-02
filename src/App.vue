@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="container">
     <animation-inspect-3d :style="{ width: '600px', height: 'unset' }">
-      <aspect-ratio-box :aspectRatio="5/3">
-        <terminal :style="{ height: '100%' }"/>
+      <aspect-ratio-box :aspectRatio="5 / 3">
+        <terminal :style="{ height: '100%' }" />
       </aspect-ratio-box>
     </animation-inspect-3d>
   </div>
@@ -33,7 +33,7 @@ export default {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Fira Code', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: antiquewhite;
@@ -43,7 +43,7 @@ export default {
 </style>
 <style scoped>
 .container {
-  height: 100%;
+  /* height: 100%; */
   display: grid;
   place-items: center;
 }
