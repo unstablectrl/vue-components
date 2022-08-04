@@ -31,6 +31,12 @@ export default {
   margin: 0;
   padding: 0;
 }
+html {
+  line-height: 1.5;
+}
+body {
+  line-height: inherit;
+}
 
 #app {
   font-family: 'Fira Code', 'Avenir', Helvetica, Arial, sans-serif;

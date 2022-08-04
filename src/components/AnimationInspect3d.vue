@@ -48,7 +48,7 @@ export default {
       const rotY = (relX / width) * 2 - 1
       return { x: rotX, y: rotY }
     },
-    onMouseLeave(e) {
+    onMouseLeave() {
       this.off = true
       this.transitionDelay = this.delayDefault
       this.transitionType = 'ease-out'

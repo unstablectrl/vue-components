@@ -73,6 +73,6 @@ export default {}
 }
 
 #terminal > section {
-  padding: 15px 0px;
+  padding: 0.75rem 0px;
 }
 </style>
